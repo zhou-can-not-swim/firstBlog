@@ -1,0 +1,41 @@
+server:
+  port: 9090
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/vueblog?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: 123456
+  redis:
+    host: 127.0.0.1
+    password: 123456
+    database: 0
+    port: 6379
+    connect-timeout: 10000
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mappers/*Mapper.xml
+  type-aliases-package: com.zqy.zqyblog_java.entity
+
+
+shiro-redis:
+  enabled: true
+  redis-manager:
+    host: 127.0.0.1:6379
+
+markerhub:
+  jwt:
+    secret: f4e2e52034348f86b67cde581c0f9eb5
+    expire: 604800
+    header: Authorization
+
+diy:
+  redis:
+    host: 127.0.0.1
+    password: 123456
+
+
+
